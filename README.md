@@ -1,80 +1,78 @@
-🧠 Breast Cancer Classification with SVM
+# 🧠 Breast Cancer Classification using Support Vector Machines (SVM)
 
-This project applies Support Vector Machines (SVM) to the Breast Cancer Dataset by Yasser H. from Kaggle. It demonstrates binary classification (Benign vs Malignant) using both linear and RBF kernels, with dimensionality reduction and hyperparameter tuning.
+This project applies Support Vector Machines (SVM) for binary classification on the **Breast Cancer Dataset** by Yasser H. from Kaggle. The goal is to differentiate between benign and malignant tumors using linear and RBF kernel SVMs, with visualization and performance evaluation.
 
-📌 Project Goals
-Load and preprocess the Kaggle dataset
+---
 
-Encode target labels (Benign/Malignant) using LabelEncoder
+## 📂 Dataset
 
-Split data into train/test sets
+**Source:** [Kaggle - Breast Cancer Dataset by Yasser H.](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset)  
+- **Rows:** 569  
+- **Features:** 30 numeric features related to tumor characteristics  
+- **Target:** Diagnosis (`M` = Malignant, `B` = Benign)
 
-Train SVM models with linear and RBF kernels
+---
 
-Visualize 2D decision boundaries using PCA
+## 🎯 Objectives
 
-Tune C and gamma via GridSearchCV
+- Load and preprocess the dataset
+- Train SVM models using linear and RBF kernels
+- Visualize decision boundaries using PCA
+- Tune hyperparameters using GridSearchCV
+- Evaluate models using confusion matrix, classification report, and cross-validation
 
-Evaluate performance with cross-validation
+---
 
-Report accuracy, precision, recall, F1-score, and confusion matrices
+## 🛠️ Technologies Used
 
-📥 Dataset
-Source: Kaggle – Yasser H.’s Breast Cancer Dataset
-🗓 Published December 29, 2021, with 32 feature columns describing tumor characteristics and binary diagnosis (Benign/Malignant) 
-arxiv.org
-+11
-github.com
-+11
-kaggle.com
-+11
-github.com
-github.com
-.
+- Python 3.x
+- Pandas, NumPy
+- Scikit-learn
+- Matplotlib, Seaborn
 
-🛠️ Technologies Used
-Python
+---
 
-NumPy / Pandas for data handling
+## 📊 Project Workflow
 
-Scikit-learn for SVM, encoding, scaling, PCA, grid search, CV, metrics
+### 1. Data Preprocessing
+- Load dataset using `pandas`
+- Encode the target variable (`diagnosis`) using `LabelEncoder`
+- Split data into features (`X`) and target (`y`)
+- Standardize features using `StandardScaler`
+- Split dataset into training and testing sets
 
-Matplotlib / Seaborn for visualization
+### 2. Model Training
+- Train **SVM with linear kernel**
+- Train **SVM with RBF kernel**
 
-🔁 Workflow Summary
-Import libraries
+### 3. Model Evaluation
+- Confusion Matrix
+- Classification Report
+- Accuracy Score
 
-Load data: pd.read_csv('breast-cancer-dataset.csv')
+### 4. Visualization
+- Use **PCA** to reduce data to 2D
+- Visualize decision boundaries using `matplotlib` and `seaborn`
 
-Encode diagnosis column (B → 0, M → 1)
+### 5. Hyperparameter Tuning
+- Perform Grid Search on `C` and `gamma` using `GridSearchCV`
+- Use 5-fold cross-validation for robust evaluation
 
-Split features (X) and target (y), then train/test split
+---
 
-Standardize features with StandardScaler
+## ✅ Results
 
-Train SVMs: kernel='linear' and kernel='rbf'
+| Model         | Accuracy |
+|---------------|----------|
+| Linear SVM    | 95.6%    |
+| RBF SVM       | 94.7%    |
+| RBF (Tuned)   | 94.7% (CV Average) |
 
-Evaluate with confusion matrix, classification report, and accuracy
+---
 
-Visualize decision boundary after reducing to 2D via PCA
+## 🧪 How to Run
 
-Tune hyperparameters (C, gamma) with GridSearchCV (5‑fold)
-
-Confirm model performance using cross_val_score
-
-🧮 Sample Results (Linear vs RBF)
-Linear SVM:
-
-Accuracy ≈ 95.6%
-
-High recall for benign tumors
-
-RBF SVM:
-
-Accuracy ≈ 94.7%
-
-Slightly higher precision, but marginally lower recall
-
-Tuned RBF (best params: C=10, gamma=0.0001):
-
-Cross‑validation accuracy ≈ 94.7% 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/svm-breast-cancer-classification.git
+   cd svm-breast-cancer-classification
