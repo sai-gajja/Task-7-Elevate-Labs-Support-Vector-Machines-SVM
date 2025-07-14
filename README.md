@@ -1,4 +1,5 @@
 🧠 Breast Cancer Classification with SVM
+
 This project applies Support Vector Machines (SVM) to the Breast Cancer Dataset by Yasser H. from Kaggle. It demonstrates binary classification (Benign vs Malignant) using both linear and RBF kernels, with dimensionality reduction and hyperparameter tuning.
 
 📌 Project Goals
